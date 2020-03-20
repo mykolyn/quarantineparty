@@ -22,8 +22,8 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/visualize", function(req, res) {
-    res.render("visualize");
+  app.get("/map", function(req, res) {
+    res.render("map");
   });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
