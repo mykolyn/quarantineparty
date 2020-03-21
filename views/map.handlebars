@@ -7,7 +7,7 @@
 <div class="side-nav">
     <div>
         <input class="ml-2 mt-4" placeholder="Enter City">
-        <button class="btn-sm btn-warning ml-2 mt-2">Search</button>
+        <button class="btn-sm btn-warning ml-2 mt-2 submit">Search</button>
     </div>
     {{!-- filter area --}}
     <div class="filters">
@@ -30,8 +30,16 @@
         </ul>
     </div>
 </div>
+
 {{!-- map d3 goes here --}}
+<div class="map-container">
+    <div class="display-map">
+        <p>something</p>
+    </div>
+</div>
 
 {{!-- footer --}}
 <footer class="small-footer"></footer>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/map.js"></script>
