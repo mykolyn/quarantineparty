@@ -1,5 +1,7 @@
 var db = require("../models");
 
+var map = require("../public/js/map.js");
+
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -23,7 +25,11 @@ module.exports = function(app) {
   });
 
   app.get("/map", function(req, res) {
-    res.render("map", map);
+    res.render("map", {
+      map: function() {
+        console.log("THIS SHOULD RUN");
+      }
+    });
   });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
