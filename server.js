@@ -21,7 +21,12 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
+// var x = function(y){
+//   console.log(y);
+// }
+// x("hello")
 // Routes
+
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
@@ -46,4 +51,4 @@ db.sequelize.sync(syncOptions).then(function() {
   });
 });
 
-module.exports = app;
+//module.exports = app;
