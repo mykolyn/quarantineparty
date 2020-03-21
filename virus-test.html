@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+     <title>virus coordinates api</title>
+</head>
+
+<body>
+    <input type="text" placeholder="virus" id="text">
+    <input type="text" placeholder="news" id="news">
+
+    
+    <button id="input">submit</button>
+    <div id="stuff-goes-here"></div>
+
+    <script type="text/javascript">
+    $(document).on("click", "#input", function(){
+         var input = $("#text").val();
+        var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + input + "&appid=fe2767efcdc5875e488e5fcdeb27a943&units=imperial";
+         $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response){
+        console.log("THIS IS THE LATITUDE");
+        console.log(response.city.coord.lat)
+        var lat = response.city.coord.lat;
+        console.log("THIS IS THE LONGITUDE");
+        console.log(response.city.coord.lon);
+        var lon = response.city.coord.lon;
+        var query2 = "https://api.tomtom.com/search/2/reverseGeocode/" + lat + ","+ lon + ".json?key=qyKlA9ulNMyAJiBN2gwsI5pmxMlraJjU";
+        $.ajax({
+            url: query2,
+            method: "GET"
+        }).then(function(response){
+            console.log("THIS IS THE POSTAL CODE")
+            console.log(response.addresses[0].address.postalCode);
+            console.log("THIS IS THE COUNTY")
+            console.log(response.addresses[0].address.countrySecondarySubdivision)
+        })
+
+
+    })
+
+
+     
+
+
+    var input2 = $("#news").val();
+    var query3 = "http://newsapi.org/v2/everything?q=" + input2 + "&apiKey=da7e0cce377a4cea803716a567c813f4";
+      
+      $.ajax({
+          url: query3,
+          method: "GET"
+      }).then(function(response){
+          for (var i = 0; i < response.articles.length; i++){
+              
+                console.log("_____________________")
+                console.log(response.articles[i])
+                console.log("_____________________")
+          }
+         
+      })
+     
+    //   var query4 = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=world&api-key=eGIw09575krjvFCtwQV4PyGl0ITskUpz";
+    //   $.ajax({
+    //       url: query4,
+    //       method: "GET"
+    //   }).then(function(response){
+    //       console.log(response)
+    //   })
+
+
+    })
+
+
+    
+    </script>
+
+   </body>
+   </html>

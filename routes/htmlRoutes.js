@@ -26,6 +26,9 @@ module.exports = function(app) {
     res.render("news");
   });
 
+  app.get("/map", function(req, res) {
+    res.render("map");
+  });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

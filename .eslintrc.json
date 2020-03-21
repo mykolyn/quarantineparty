@@ -26,14 +26,11 @@
             "error",
             2
         ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
+        
+        // "semi": [
+        //     "error",
+        //     "always"
+        // ],
         "prettier/prettier": "error"
     }
 }
