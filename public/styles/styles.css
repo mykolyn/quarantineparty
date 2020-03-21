@@ -3,4 +3,30 @@
   height: 100vh;
   background-color: #700;
   color: #ffffff;
+  z-index: 1;
+}
+.small-footer {
+  width: 80%;
+  height: 30px;
+  background-color: #343a40;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  cursor: pointer;
+}
+.disabled {
+  cursor: no-drop;
+  opacity: 0.6;
+}
+.census {
+  position: fixed;
+  bottom: 0;
+}
+.filters {
+  margin-top: 50px;
 }

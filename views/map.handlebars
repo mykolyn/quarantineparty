@@ -6,28 +6,32 @@
 {{!-- side bar --}}
 <div class="side-nav">
     <div>
-        <input placeholder="Enter City">
-        <button class="btn-sm btn-warning">Search</button>
+        <input class="ml-2 mt-4" placeholder="Enter City">
+        <button class="btn-sm btn-warning ml-2 mt-2">Search</button>
     </div>
-
     {{!-- filter area --}}
-    <div>
-        <p>Filters</p>
+    <div class="filters">
+        <p class="ml-2">Filters</p>
         <ul>
-            <li>death</li>
-            <li>infected</li>
-            <li>age</li>
-            <li>recovered</li>
+            <li id="death">death</li>
+            <li id="infected">infected</li>
+            <li class="disabled" id="age">age</li>
+            <li class="disabled" id="recovered">recovered</li>
         </ul>
     </div>
     {{!-- us census --}}
-    <div>
-        <p>US Census Data</p>
+    <div class="census">
+        <p class="ml-2">US Census Data</p>
         <ul>
-            <li>county</li>
-            <li>sex</li>
-            <li>household income</li>
-            <li>school district</li>
+            <li class="disabled" id="country">county</li>
+            <li class="disabled" id="sex">sex</li>
+            <li class="disabled" id="income">household income</li>
+            <li class="disabled" id="school">school district</li>
         </ul>
     </div>
 </div>
+{{!-- map d3 goes here --}}
+
+{{!-- footer --}}
+<footer class="small-footer"></footer>
+
