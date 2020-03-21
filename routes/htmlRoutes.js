@@ -23,7 +23,7 @@ module.exports = function(app) {
   });
 
   app.get("/map", function(req, res) {
-    res.render("map");
+    res.render("map", map);
   });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

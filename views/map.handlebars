@@ -4,30 +4,42 @@
 </div>
 
 {{!-- side bar --}}
-<div class="side-nav">
-    <div>
-        <input placeholder="Enter City">
-        <button class="btn-sm btn-warning">Search</button>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="side-nav">
+            <div>
+                <input placeholder="Enter City">
+                <button class="btn-sm btn-warning">Search</button>
+            </div>
+
+            {{!-- filter area --}}
+            <div>
+                <p>Filters</p>
+                <ul>
+                    <li>death</li>
+                    <li>infected</li>
+                    <li>age</li>
+                    <li>recovered</li>
+                </ul>
+            </div>
+            {{!-- us census --}}
+            <div>
+                <p>US Census Data</p>
+                <ul>
+                    <li>county</li>
+                    <li>sex</li>
+                    <li>household income</li>
+                    <li>school district</li>
+                </ul>
+            </div>
+        </div>
+    </div>    
+    <div class="col-md-9">
+        <h2 class="text-center">Map</h2>
+        <hr>
+        <div id="mapid"></div>
     </div>
 
-    {{!-- filter area --}}
-    <div>
-        <p>Filters</p>
-        <ul>
-            <li>death</li>
-            <li>infected</li>
-            <li>age</li>
-            <li>recovered</li>
-        </ul>
-    </div>
-    {{!-- us census --}}
-    <div>
-        <p>US Census Data</p>
-        <ul>
-            <li>county</li>
-            <li>sex</li>
-            <li>household income</li>
-            <li>school district</li>
-        </ul>
-    </div>
 </div>
+<script></script>
