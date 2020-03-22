@@ -19,6 +19,7 @@ module.exports = function(app) {
     db.corona
       .findAll({
         attributes: [
+          "province",
           "country",
           "latitude",
           "longitude",
@@ -27,7 +28,7 @@ module.exports = function(app) {
             "Total_Cases"
           ]
         ],
-        group: ["country", "latitude", "longitude"]
+        group: ["province", "country", "latitude", "longitude"]
       })
       .then(function(data) {
         console.log(data);

@@ -62,7 +62,13 @@ $.ajax("/api/map/", {
         response[i].longitude],
       radius: (response[i].Total_Cases * 40) / 20000,
 // eslint-disable-next-line prettier/prettier
-      cases: response[i].Total_Cases
+      cases: response[i].Total_Cases,
+      // eslint-disable-next-line prettier/prettier
+      province: response[i].province,
+      // eslint-disable-next-line prettier/prettier
+      country: response[i].country
+
+      
 // eslint-disable-next-line prettier/prettier
 
       }}
@@ -88,7 +94,14 @@ function dFnction() {
     .offset([-8, 0])
     // eslint-disable-next-line no-unused-vars
     .html(function(d) {
-      return "Cases: " + d3.select(this).attr("cases");
+      return (
+        "Country: " +
+        d3.select(this).attr("country") +
+        " Province/State: " +
+        d3.select(this).attr("province-state") +
+        " Cases: " +
+        d3.select(this).attr("cases")
+      );
     });
   svg.call(tool_tip);
 
@@ -107,11 +120,12 @@ function dFnction() {
     .style("stroke", "black")
     .style("opacity", 0.3)
     .style("fill", function(d) {
-      if (d.circle.radius < 21) {
-        return "purple";
-      } else {
-        return "red";
-      }
+      // if (d.circle.radius < 21) {
+      //   return "purple";
+      // } else {
+      //   return "red";
+      // }
+      return "red";
     })
     .attr("r", function(d) {
       if (d.circle.radius < 10) {
@@ -126,6 +140,12 @@ function dFnction() {
     })
     .attr("cases", function(d) {
       return d.circle.cases;
+    })
+    .attr("country", function(d) {
+      return d.circle.country;
+    })
+    .attr("province-state", function(d) {
+      return d.circle.province;
     })
     // eslint-disable-next-line camelcase
     .on("mouseover", tool_tip.show)
