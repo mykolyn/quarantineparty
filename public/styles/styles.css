@@ -47,9 +47,9 @@ li {
   background-color: #343a40;
   position: fixed;
   bottom: 0;
-  color: #fff;
   padding: 15px;
 }
+.home-footer i {  color: #fff;}
 .arrow {
   margin-bottom: 5px;
   width: 30px;
@@ -74,4 +74,11 @@ li {
   color: #fff;
   background-color: #ed8e00;
   padding: 5px;
+}
+/* contact page */
+.creators {
+  padding: 30px;
+}
+.pfp {
+  border-radius: 50%;
 }
