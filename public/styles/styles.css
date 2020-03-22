@@ -50,9 +50,28 @@ li {
   color: #fff;
   padding: 15px;
 }
-a {
-  color: #fff;
+.arrow {
+  margin-bottom: 5px;
+  width: 30px;
 }
 .icon {
   margin: 3px
+}
+.container {
+  padding-top: 20px;
+}
+.jumbotron {
+  background-color: #343a40;
+  height: 520px;
+  color: #fff;
+  background-image: url("https://cdn3.iconfinder.com/data/icons/healthcare-and-medicine-8/64/healthcare_medicine_DNA-512.png");
+  background-repeat: no-repeat;
+  background-position-x: 550px;
+  padding: 100px;
+  line-height: 100px;
+}
+.motto {
+  color: #fff;
+  background-color: #ed8e00;
+  padding: 5px;
 }
