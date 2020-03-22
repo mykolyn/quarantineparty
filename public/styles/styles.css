@@ -3,4 +3,74 @@
   height: 100vh;
   background-color: #700;
   color: #ffffff;
+  z-index: 1;
+  position: fixed;
+}
+
+.map-container {
+  margin: 30px 30px 30px calc(20% + 30px);
+  height: calc(100vh - 146px);
+}
+
+.small-footer {
+  width: 80%;
+  height: 30px;
+  background-color: #343a40;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  cursor: pointer;
+}
+.disabled {
+  cursor: no-drop;
+  opacity: 0.6;
+}
+.census {
+  margin-top: 200px;
+}
+.filters {
+  margin-top: 50px;
+}
+.display-map {
+  border: #700 5px solid;
+  height: 100%;
+}
+
+#mapid { height: 600px;  
+  width:1000px;   
+    
+}
+
+.d3-tip {
+  line-height: 1;
+  padding: 6px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips specifically */
+.d3-tip.n:after {
+  margin: -2px 0 0 0;
+  top: 100%;
+  left: 0;
 }
