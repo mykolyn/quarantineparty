@@ -1,23 +1,25 @@
 module.exports = function(sequelize, DataTypes) {
   var corona = sequelize.define("corona", {
-    age: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    sex: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    city: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
     province: {
       type: DataTypes.STRING,
       allowNull: true
     },
     country: {
       type: DataTypes.STRING,
+      allowNull: true
+    },
+    // eslint-disable-next-line camelcase
+    num_case: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+      // eslint-disable-next-line camelcase
+    },
+    death: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    recovered: {
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     latitude: {

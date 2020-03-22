@@ -8,6 +8,33 @@ module.exports = function(app) {
     });
   });
 
+  // app.get("/api/map", function(req, res) {
+  //   db.corona.findAll({ where: { country: "India" } }).then(function(data) {
+  //     // console.log(data);
+  //     res.json(data);
+  //   });
+  // });
+
+  app.get("/api/map", function(req, res) {
+    db.corona
+      .findAll({
+        attributes: [
+          "country",
+          "latitude",
+          "longitude",
+          [
+            db.corona.sequelize.fn("sum", db.corona.sequelize.col("num_case")),
+            "Total_Cases"
+          ]
+        ],
+        group: ["country", "latitude", "longitude"]
+      })
+      .then(function(data) {
+        console.log(data);
+        res.json(data);
+      });
+  });
+
   // Create a new example
   app.post("/api/examples", function(req, res) {
     db.Example.create(req.body).then(function(dbExample) {
