@@ -9,39 +9,44 @@
     <div class="col-md-3">
         <div class="side-nav">
             <div>
-                <input placeholder="Enter City">
-                <button class="btn-sm btn-warning">Search</button>
+                <input class="ml-2 mt-4" placeholder="Enter City">
+                <button lass="btn-sm btn-warning ml-2 mt-2 submit">Search</button>
             </div>
 
             {{!-- filter area --}}
-            <div>
-                <p>Filters</p>
-                <ul>
-                    <li>death</li>
-                    <li>infected</li>
-                    <li>age</li>
-                    <li>recovered</li>
-                </ul>
-            </div>
-            {{!-- us census --}}
-            <div>
-                <p>US Census Data</p>
-                <ul>
-                    <li>county</li>
-                    <li>sex</li>
-                    <li>household income</li>
-                    <li>school district</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-9">
-        <h2 class="text-center">Map</h2>
-        <hr>
-        <div id="mapid"></div>
-    </div>
+<div>
+    <p class="ml-2">Filters</p>
+    <ul>
+        <li>death</li>
+        <li>infected</li>
+        <li class="disabled">age</li>
+        <li class="disabled">recovered</li>
+    </ul>
+</div>
+{{!-- us census --}}
+<div>
+    <p class="ml-2">US Census Data</p>
+    <ul>
+        <li class="disabled">county</li>
+        <li class="disabled">sex</li>
+        <li class="disabled">household income</li>
+        <li class="disabled">school district</li>
+    </ul>
+</div>
+</div>
+</div>
+<div class="col-md-9">
+    <h2 class="text-center">Map</h2>
+    <hr>
+    <div id="mapid"></div>
+</div>
 
 </div>
+
+
+{{!-- footer --}}
+<footer class="small-footer"></footer>
+
 
 <!--leaflet and d3 related librarries-->
 <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.css">
@@ -51,4 +56,4 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery.js"></script>
-<script src="./js/map.js"></script> 
+<script src="./js/map.js"></script>
