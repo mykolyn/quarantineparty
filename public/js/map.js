@@ -46,7 +46,7 @@ var data = [];
 
 $.ajax("/api/map/", {
   type: "GET"
-}).then(function (response) {
+}).then(function(response) {
   console.log("Map Data");
   console.log(response[0].country);
   // Reload the page to get the updated list

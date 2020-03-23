@@ -21,7 +21,15 @@ module.exports = function(app) {
       });
     });
   });
-
+  // tp construction
+  app.get("/auction", function(req, res) {
+    res.render("example");
+  });
+  // contact page
+  app.get("/contact", function(req, res) {
+    res.render("contact");
+  });
+  // map page
   app.get("/map", function(req, res) {
     res.render("map");
   });
