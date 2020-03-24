@@ -1,17 +1,59 @@
-// var db = require("../models");
-
+var lastClicked = "";
 $("#death").on("click", function(event) {
   event.preventDefault();
-  $(".display-map").html("<h1>This will show the amount of death");
-  console.log("this is deaths");
+  data = [];
+
+  if (lastClicked === "death") {
+    lastClicked = "";
+    dFnction();
+  } else {
+    $.ajax("/api/map/death", {
+      type: "GET"
+    }).then(function(response) {
+      lastClicked = "death";
+      displayStatus(response);
+      dFnction();
+    });
+  }
 });
 
 $("#infected").on("click", function(event) {
   event.preventDefault();
-  $(".display-map").text("This is the amount of infected");
-  console.log("the amount of infected");
+  data = [];
+
+  if (lastClicked === "infected") {
+    lastClicked = "";
+    dFnction();
+  } else {
+    $.ajax("/api/map/infected", {
+      type: "GET"
+    }).then(function(response) {
+      lastClicked = "infected";
+      // eslint-disable-next-line eqeqeq
+      displayStatus(response);
+      dFnction();
+    });
+  }
 });
 
+$("#recovered").on("click", function(event) {
+  event.preventDefault();
+  data = [];
+
+  if (lastClicked === "recovered") {
+    lastClicked = "";
+    dFnction();
+  } else {
+    $.ajax("/api/map/recovered", {
+      type: "GET"
+    }).then(function(response) {
+      lastClicked = "recovered";
+      // eslint-disable-next-line eqeqeq
+      displayStatus(response);
+      dFnction();
+    });
+  }
+});
 var myMap = L.map("mapid").setView([39.82, -98.58], 4);
 
 var feature;
@@ -40,50 +82,35 @@ d3.select("g.parent")
 var svg = d3.select("#mapid").select("svg"),
   g = svg.append("g");
 
-// var data = [
-//   { circle: { coords: [37.338, -121.8863], radius: 20 } },
-//   { circle: { coords: [40.71, -74], radius: 50 } },
-//   { circle: { coords: [28.61, 77], radius: 15 } }
-// ];
-
 var data = [];
 
+// default display infected at first
 $.ajax("/api/map/", {
   type: "GET"
 }).then(function(response) {
-  console.log("Map Data");
-  console.log(response[0].country);
- 
-  // Reload the page to get the updated list
-  // location.reload();
-  for (i in response) {
-    data.push(
-      // eslint-disable-next-line prettier/prettier
-      {circle: {coords: [
-// eslint-disable-next-line prettier/prettier
-        // eslint-disable-next-line prettier/prettier
-        // eslint-disable-next-line prettier/prettier
-        response[i].latitude,    
-        response[i].longitude],
-      radius: (response[i].Total_Cases * 40) / 20000,
-// eslint-disable-next-line prettier/prettier
-      cases: response[i].Total_Cases,
-      // eslint-disable-next-line prettier/prettier
-      province: response[i].province,
-      // eslint-disable-next-line prettier/prettier
-      country: response[i].country
-
-        // eslint-disable-next-line prettier/prettier
-
-      }}
-    );
-    console.log("data array");
-    console.log(data);
-  }
+  displayStatus(response);
   dFnction();
 });
 
+function displayStatus(response) {
+  for (i in response) {
+    // eslint-disable-next-line eqeqeq
+    if (response[i].Total_Cases != 0) {
+      data.push({
+        circle: {
+          coords: [response[i].latitude, response[i].longitude],
+          radius: (response[i].Total_Cases * 40) / 20000,
+          cases: response[i].Total_Cases,
+          province: response[i].province,
+          country: response[i].country
+        }
+      });
+    }
+  }
+}
+
 function dFnction() {
+  d3.selectAll("circle").remove();
   for (var i = 0; i < data.length; i++) {
     data[i].LatLng = new L.LatLng(
       data[i].circle.coords[0],
@@ -96,8 +123,7 @@ function dFnction() {
     .tip()
     .attr("class", "d3-tip")
     .offset([-8, 0])
-    // eslint-disable-next-line no-unused-vars
-    .html(function(d) {
+    .html(function() {
       return (
         "Country: " +
         d3.select(this).attr("country") +
@@ -111,6 +137,7 @@ function dFnction() {
 
   feature = g
     .selectAll("circle")
+    // .remove()
     .data(data)
     .enter()
     .append("svg:circle")
@@ -123,13 +150,16 @@ function dFnction() {
     })
     .style("stroke", "black")
     .style("opacity", 0.3)
-    .style("fill", function(d) {
-      // if (d.circle.radius < 21) {
-      //   return "purple";
-      // } else {
-      //   return "red";
-      // }
-      return "red";
+    .style("fill", function() {
+      if (lastClicked === "death") {
+        return "red";
+      } else if (lastClicked === "infected") {
+        return "yellow";
+      } else if (lastClicked === "recovered") {
+        return "green";
+      } else {
+        return "white";
+      }
     })
     .attr("r", function(d) {
       if (d.circle.radius < 10) {
@@ -165,12 +195,11 @@ myMap.on("moveend", update);
 
 function update() {
   feature.attr("transform", function(d) {
-    // eslint-disable-next-line prettier/prettier
-    return ("translate(" +
+    return (
+      "translate(" +
       myMap.latLngToLayerPoint(d.LatLng).x +
       "," +
       myMap.latLngToLayerPoint(d.LatLng).y +
-      // eslint-disable-next-line prettier/prettier
       ")"
     );
   });

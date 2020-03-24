@@ -11,14 +11,6 @@
   margin: 30px 30px 30px calc(20% + 30px);
   height: calc(100vh - 146px);
 } 
-.small-footer {
-  width: 80%;
-  height: 30px;
-  background-color: #343a40;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
 ul {
   list-style-type: none;
 }
