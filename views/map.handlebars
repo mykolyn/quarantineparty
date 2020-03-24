@@ -4,42 +4,50 @@
 </div>
 
 {{!-- side bar --}}
-<div class="side-nav">
-    <div>
-        <input class="ml-2 mt-4" placeholder="Enter City">
-        <button class="btn-sm btn-warning ml-2 mt-2 submit">Search</button>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="side-nav">
+            <div>
+                <input class="ml-2 mt-4" placeholder="Enter City">
+                <button lass="btn-sm btn-warning ml-2 mt-2 submit">Search</button>
+            </div>
+
+            {{!-- filter area --}}
+            <div>
+                <p class="ml-2">Filters</p>
+                <ul>
+                    <li id="death">death</li>
+                    <li id="infected">infected</li>
+                    <li id="recovered">recovered</li>
+                    <li class="disabled">age</li>
+                </ul>
+            </div>
+            {{!-- us census --}}
+            <div>
+                <p class="ml-2">US Census Data</p>
+                <ul>
+                    <li class="disabled">county</li>
+                    <li class="disabled">sex</li>
+                    <li class="disabled">household income</li>
+                    <li class="disabled">school district</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    {{!-- filter area --}}
-    <div class="filters">
-        <p class="ml-2">Filters</p>
-        <ul>
-            <li id="death">death</li>
-            <li id="infected">infected</li>
-            <li class="disabled" id="age">age</li>
-            <li class="disabled" id="recovered">recovered</li>
-        </ul>
+    <div class="col-md-9 map-container">
+        {{!-- <h4 class="text-center">Map</h4> --}}
+        {{!-- <hr> --}}
+        <div id="mapid"></div>
     </div>
-    {{!-- us census --}}
-    <div class="census">
-        <p class="ml-2">US Census Data</p>
-        <ul>
-            <li class="disabled" id="country">county</li>
-            <li class="disabled" id="sex">sex</li>
-            <li class="disabled" id="income">household income</li>
-            <li class="disabled" id="school">school district</li>
-        </ul>
-    </div>
+
 </div>
 
-{{!-- map d3 goes here --}}
-<div class="map-container">
-    <div class="display-map">
-        <p>something</p>
-    </div>
-</div>
 
-{{!-- footer --}}
-<footer class="small-footer"></footer>
-
+<!--leaflet and d3 related librarries-->
+<link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+<script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/map.js"></script>
+<script src="./js/map.js"></script>
