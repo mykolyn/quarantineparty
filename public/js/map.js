@@ -33,6 +33,10 @@ L.tileLayer(
 
 myMap._initPathRoot();
 
+d3.select("g.parent")
+  .selectAll("*")
+  .remove();
+
 var svg = d3.select("#mapid").select("svg"),
   g = svg.append("g");
 
@@ -49,6 +53,7 @@ $.ajax("/api/map/", {
 }).then(function(response) {
   console.log("Map Data");
   console.log(response[0].country);
+ 
   // Reload the page to get the updated list
   // location.reload();
   for (i in response) {
@@ -68,8 +73,7 @@ $.ajax("/api/map/", {
       // eslint-disable-next-line prettier/prettier
       country: response[i].country
 
-      
-// eslint-disable-next-line prettier/prettier
+        // eslint-disable-next-line prettier/prettier
 
       }}
     );

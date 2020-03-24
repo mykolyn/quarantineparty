@@ -15,7 +15,7 @@ module.exports = function(app) {
   //   });
   // });
 
-  app.get("/api/map", function(req, res) {
+  app.get("/api/map/", function(req, res) {
     db.corona
       .findAll({
         attributes: [
@@ -24,7 +24,7 @@ module.exports = function(app) {
           "latitude",
           "longitude",
           [
-            db.corona.sequelize.fn("sum", db.corona.sequelize.col("num_case")),
+            db.corona.sequelize.fn("sum", db.corona.sequelize.col("infected")),
             "Total_Cases"
           ]
         ],

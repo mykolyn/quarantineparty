@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     // eslint-disable-next-line camelcase
-    num_case: {
+    infected: {
       type: DataTypes.INTEGER,
       allowNull: true
       // eslint-disable-next-line camelcase
