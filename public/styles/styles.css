@@ -23,20 +23,21 @@ font-size:20px;
 }
 
 
-.main-menu:hover,nav.main-menu.expanded {
+/* .main-menu:hover,nav.main-menu.expanded {
 width:250px;
 overflow:visible;
-}
+} */
 
 .main-menu {
 background:#212121;
 border-right:1px solid #e5e5e5;
+margin-top: 50px;
 position:absolute;
 top:0;
 bottom:0;
 height:100%;
 left:0;
-width:60px;
+width:250px;
 overflow:hidden;
 -webkit-transition:width .05s linear;
 transition:width .05s linear;
