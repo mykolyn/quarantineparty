@@ -1,41 +1,26 @@
 {{>header}}
 
 <div class="container">
-  <div class="row">
-    <div class="col">
+  <div class="">
+    <div class="">
       <h4>TP AUCTION HOUSE! BID YOUR GAME!</h4>
-      <div>
-        <ol>
-          {{#each tp_auctions}}
-            <li>
-              <div>
-                <div class="card col-4">
-                  <img src="https://picsum.photos/100" class="card-img-top" alt="random_pic">
-                  <div class="card-body">
-                    <h5 class="card-title">{{name}}</h5>
-                  </div>
-                </div>
-
-                <form class="form create-form">
-                  <div class="form-group">
-                    <label for="bid-amount">Bid Amount: </label>
-                    <input class="bid-amount" type="number" step="0.01">
-                    <button type="submit" class="add-bid btn btn-primary">Bid!</button>
-                  </div>
-                </form>
-              </div>
-            </li>
-          {{/each}}
-        </ol>
-      </div>
+      <div class="item-display row"></div>
 
       <hr>
+      {{!-- <form class="form create-form">
+        <div class="form-group">
+          <p for="bid-amount">Select the item you'd like to bid on: </p>
+          <input id="item-id" type="number" step="1" placeholder="Item ID">
+          <input id="your-bid" type="number" step="0.01" placeholder="Your Bid">
+          <button type="submit" class="add-bid btn btn-primary">Bid Item!</button>
+        </div>
+      </form> --}}
       <form class="form create-form">
         <div class="form-group">
-          <p for="bid-amount">Add an Item to the Auction: </p>
-          <input class="bid-item" type="text" placeholder="Item Name">
-          <input class="start-bid" type="number" step="0.01" placeholder="Starting Bid">
-          <button type="submit" class="add-bid btn btn-primary">Add Item!</button>
+          <p for="bid-amount">Add and item to the auction house: </p>
+          <input id="item-name" type="text" placeholder="Item Name">
+          <input id="item-price" type="number" step="0.01" placeholder="Item Price">
+          <button type="submit" class="add-item btn btn-primary">Add Item!</button>
         </div>
       </form>
 
@@ -43,6 +28,7 @@
   </div>
 </div>
 
+{{!-- {{>footer}} --}}
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./js/auction.js"></script>
-{{>footer}}

@@ -7,13 +7,56 @@ module.exports = function(app) {
       res.json(dbExamples);
     });
   });
-
+  // auction route
   app.get("/api/auction", function(req, res) {
     db.tp_auctions.findAll({}).then(function(data) {
       res.json(data);
     });
   });
-
+  app.post("/api/auction", function(req, res) {
+    // console.log(body);
+    db.tp_auctions
+      .create({
+        name: req.body.name,
+        price: req.body.price
+      })
+      .then(function(db) {
+        res.json(db);
+      });
+  });
+  app.put("/api/auction", function(req, res) {
+    db.tp_auctions
+      .update(
+        {
+          name: req.body.name,
+          price: req.body.price
+        },
+        {
+          where: {
+            id: req.body.id
+          }
+        }
+      )
+      .then(function(db) {
+        res.json(db);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+  app.get("/api/auction/:id", function(req, res) {
+    db.tp_auctions
+      .findAll({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(function(data) {
+        // console.log(data);
+        res.json(data);
+      });
+  });
+  // countries geolocation
   app.get("/api/map/countryIs/:country", function(req, res) {
     db.countries
       .findAll({
@@ -26,7 +69,7 @@ module.exports = function(app) {
         res.json(data);
       });
   });
-
+  // leaflet mapping
   app.get("/api/map/", function(req, res) {
     db.corona
       .findAll({
