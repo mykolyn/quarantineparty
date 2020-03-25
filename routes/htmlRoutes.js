@@ -28,7 +28,7 @@ module.exports = function(app) {
 
   // tp construction
   app.get("/auction", function(req, res) {
-    res.render("example");
+    res.render("auction");
   });
   // contact page
   app.get("/contact", function(req, res) {
