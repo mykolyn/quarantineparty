@@ -52,14 +52,14 @@ $(document).ready(function () {
         // var eList = $("<ul>");
         // $(eList).attr("class", "Accordion")
         itemDiv = $("<div>")
-        $(itemDiv).append('<a href="http://www.google.com">Google</a>')
-        $(itemDiv).text(result[a])
+        itemDiv.append("<a>")
+        itemDiv.text(result[a])
 
 
         if (a === 0) {
           disasterName = result[1]
-listHead = $("<h2>")
-$(listHead).text(disasterName)
+          listHead = $("<h2>")
+          $(listHead).text(disasterName)
           // eLabel = $("<label>")
           // $(eLabel).attr("for", "checkboxes-menu1")
           // $(eLabel).text(disasterName)
@@ -80,7 +80,7 @@ $(listHead).text(disasterName)
 
         console.log("Asdasdasd" + subList)
 
-        $("#emergencylist").append(itemDiv)
+        $("#emergencylist").append(`<div><a href="https://www.amazon.com/s?k=${result[a]}&ref=nb_sb_noss_2" target="_blank">${result[a]}</a></div>`)
 
 
       }
