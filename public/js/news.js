@@ -125,11 +125,13 @@ $(document).ready(function () {
 
         var newsDiv = $("<div>");
         $(newsDiv).attr("class", "card")
+       
+
 
         //card-body element
         var cardBody = $("<div>");
         $(cardBody).attr("class", "card-body")
-
+        $(newsDiv).attr("id", "newscard")
         //create title
         var title = response.articles[i].title
         var cardHead = $("<h5>")
