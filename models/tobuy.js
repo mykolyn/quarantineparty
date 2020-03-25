@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var toBuy = sequelize.define("to_buys", {
+  var toBuy = sequelize.define("to_buy", {
     name: {
       type: DataTypes.STRING,
       allowNull: true
