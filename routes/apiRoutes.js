@@ -1,27 +1,27 @@
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Get all examples
-  app.get("/api/examples", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
+  app.get("/api/examples", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
       res.json(dbExamples);
     });
   });
 
-  app.get("/api/map/countryIs/:country", function (req, res) {
+  app.get("/api/map/countryIs/:country", function(req, res) {
     db.countries
       .findAll({
         where: {
           name: req.params.country
         }
       })
-      .then(function (data) {
+      .then(function(data) {
         // console.log(data);
         res.json(data);
       });
   });
 
-  app.get("/api/map/", function (req, res) {
+  app.get("/api/map/", function(req, res) {
     db.corona
       .findAll({
         attributes: [
@@ -36,13 +36,13 @@ module.exports = function (app) {
         ],
         group: ["province", "country", "latitude", "longitude"]
       })
-      .then(function (data) {
+      .then(function(data) {
         // console.log(data);
         res.json(data);
       });
   });
   // clicking on the filter
-  app.get("/api/map/:status", function (req, res) {
+  app.get("/api/map/:status", function(req, res) {
     db.corona
       .findAll({
         attributes: [
@@ -60,13 +60,12 @@ module.exports = function (app) {
         ],
         group: ["province", "country", "latitude", "longitude"]
       })
-      .then(function (data) {
+      .then(function(data) {
         // console.log(data);
         res.json(data);
       });
   });
 
-  // get data from emergency checklist
   app.get("/api/map/disaster/:disasters", function(req, res) {
     db.emergency_list
       .findAll({
@@ -79,13 +78,10 @@ module.exports = function (app) {
         res.json(data);
       });
   });
-
-
-
-
+  
   // Create a new example
-  app.post("/api/examples", function (req, res) {
-    db.Example.create(req.body).then(function (dbExample) {
+  app.post("/api/examples", function(req, res) {
+    db.Example.create(req.body).then(function(dbExample) {
       res.json(dbExample);
     });
   });
@@ -103,13 +99,11 @@ module.exports = function (app) {
   //   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function (req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function (
+  app.delete("/api/examples/:id", function(req, res) {
+    db.Example.destroy({ where: { id: req.params.id } }).then(function(
       dbExample
     ) {
       res.json(dbExample);
     });
   });
 };
-
-

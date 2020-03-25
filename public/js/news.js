@@ -7,23 +7,14 @@ $(document).ready(function () {
   var test = ""
 
 
-$("#submit").on("click", function(){
-  var disaster = $(".selectpicker").val()
-  console.log(disaster + "AAAAAAAAAAAAAAAAAAAAAA")
-  $.ajax("/api/emergencylist/" + disaster, {
-    type: "GET",
-    
-    // data: emergencyList
-  }).then(function (res) {
-    
-    console.log(res)
+  $("#submit").on("click", function () {
+    event.preventDefault()
+
   })
 
-})
 
 
-
-  $("#submit1").on("click", function () {
+  $("#submit").on("click", function () {
     // $(document).on("click", "#submit", function(){     
     event.preventDefault()
     input2 = $("#input123").val()
@@ -31,10 +22,72 @@ $("#submit").on("click", function(){
     var query3 = "http://newsapi.org/v2/everything?q=" + input2 + "&apiKey=da7e0cce377a4cea803716a567c813f4";
     console.log("submit clicked")
     // console.log(query3)
-    
-    
-  
 
+    //emergency list
+    var disasterName = ""
+    var disaster = $(".selectpicker").val()
+    console.log(disaster + "AAAAAAAAAAAAAAAAAAAAAA")
+    $.ajax("/api/map/disaster/" + disaster, {
+      type: "GET",
+
+      // data: emergencyList
+    }).then(function (res) {
+      console.log(res)
+      var obj = res[0]
+      var result = Object.keys(obj).map(function (key) {
+        return obj[key];
+      });
+
+      console.log("this should be disaster name:" + result[1]);
+      console.log(result.length)
+      var disasterName
+      var sublist
+      for (var a = 1; a < (result.length-2); a++) {
+        // console.log("loop running")
+        // console.log("----below is results-----")
+        // console.log(a + " " + result[a])
+        // console.log("------------------------")
+        // var eList = $("<ul>");
+        // $(eList).attr("class", "Accordion")
+        itemDiv = $("<div>")
+        $(itemDiv).text(result[a])
+        
+        if (a === 0) {
+          disasterName = result[1]
+
+          eLabel = $("<label>")
+          $(eLabel).attr("for", "checkboxes-menu1")
+          $(eLabel).text(disasterName)
+
+          //  input = $("<input>")
+          //   $(input).attr("id", "checkboxes-menu1")
+          //   $(input).attr("type", "checkbox")
+          //   $(input).attr("name", "menu")
+          // console.log("Adfadfadf" +eLabel)
+
+          console.log("title on html should show" + disasterName)
+
+
+        }
+        subList = $("<li>")
+        $(sublist).attr("class", "Accordion-subElement")
+        $(sublist).text(result[a])
+
+        console.log("Asdasdasd" + subList)
+
+      $("#emergencylist").append(itemDiv)
+
+
+      }
+      //render
+      $(".Accordion-item").append(eLabel)
+      // $(".Accordion-item").append(input)
+      $(".Accordion-subElements").append(subList)
+
+    })
+    console.log("dname is" + disasterName)
+
+    // news articles
     $.ajax({
       url: query3,
       method: "GET"
