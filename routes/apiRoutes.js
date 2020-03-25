@@ -14,14 +14,13 @@ module.exports = function(app) {
     });
   });
   app.post("/api/auction", function(req, res) {
-    // console.log(body);
     db.tp_auctions
       .create({
         name: req.body.name,
         price: req.body.price
       })
-      .then(function(db) {
-        res.json(db);
+      .then(function(data) {
+        res.json(data);
       });
   });
   app.put("/api/auction", function(req, res) {
@@ -37,24 +36,22 @@ module.exports = function(app) {
           }
         }
       )
-      .then(function(db) {
-        res.json(db);
+      .then(function(data) {
+        res.json(data);
       })
       .catch(function(err) {
         res.json(err);
       });
   });
-  app.get("/api/auction/:id", function(req, res) {
+  app.delete("/api/auction/:id", function(req, res) {
     db.tp_auctions
-      .findAll({
+      .destroy({
         where: {
           id: req.params.id
-        }
-      })
-      .then(function(data) {
-        // console.log(data);
-        res.json(data);
-      });
+      }
+    }).then(function(data) {
+      res.json(data);
+    });
   });
   // countries geolocation
   app.get("/api/map/countryIs/:country", function(req, res) {
