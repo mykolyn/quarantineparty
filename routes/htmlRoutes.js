@@ -21,14 +21,24 @@ module.exports = function(app) {
       });
     });
   });
-
+ //news page
   app.get("/news", function(req, res) {
     res.render("news");
   });
 
+  // tp construction
+  app.get("/auction", function(req, res) {
+    res.render("example");
+  });
+  // contact page
+  app.get("/contact", function(req, res) {
+    res.render("contact");
+  });
+  // map page
   app.get("/map", function(req, res) {
     res.render("map");
   });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

@@ -1,170 +1,135 @@
-
-
-
 {{>header}}
 
 
-  <nav class="main-menu">
-    <ul>
+<nav class="main-menu">
+  <ul>
 
 
-      <li>
-        <a href="#">
-          <i class="fa fa-bar-chart-o fa-2x"></i>
-          <span class="nav-text">
-            Graphs and Statistics
-          </span>
-        </a>
-      </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-bar-chart-o fa-2x"></i>
+        <span class="nav-text">
+          Graphs and Statistics
+        </span>
+      </a>
+    </li>
 
 
 
-      <li class="has-subnav">
-        <a href="#">
-          <i class="fa fa-list fa-2x"></i>
-          <span class="nav-text">
-            {{!-- <form action="/action_page.php"> --}}
-            <form id="form1">
-              <label for="disaster"></label>
-              <input type="text" id="input123" name="fname" placeholder="miracle"><br><br>
-              <label for="lname"></label>
-              <input type="text" id="lname" name="lname" placeholder="City"><br><br>
-              <input type="submit" id="submit" value="Submit">
-            </form>
-          </span>
-        </a>
-      </li>
+    <li class="has-subnav">
+      <a href="#">
+        <i class="fa fa-list fa-2x"></i>
+        <span class="nav-text">
+          {{!-- <form action="/action_page.php"> --}}
+          <form id="form1">
+            <label for="disaster"></label>
+            <input type="text" id="input123" name="fname" placeholder="miracle"><br><br>
+            <select class="selectpicker">
+              <option>Fire</option>
+              <option>water</option>
+              <option>Earthquake</option>
+            </select>
 
-      <li>
-        <a href="#">
-          <i class="fa fa-bar-chart-o fa-2x"></i>
-          <span class="nav-text">
-            Graphs and Statistics
-          </span>
-        </a>
-      </li>
+            <label for="lname"></label>
+            <input type="text" id="lname" name="lname" placeholder="City"><br><br>
+            <input type="submit" id="submit" value="Submit">
+          </form>
+        </span>
+      </a>
+    </li>
 
-      <li>
-        <a href="#">
-          <i class="fa fa-table fa-2x"></i>
-          <span class="nav-text">
-            Tables
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-map-marker fa-2x"></i>
-          <span class="nav-text">
-            Maps
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-info fa-2x"></i>
-          <span class="nav-text">
-            Documentation
-          </span>
-        </a>
-      </li>
-    </ul>
+    <li>
+      <a href="#">
+        <i class="fa fa-bar-chart-o fa-2x"></i>
+        <span class="nav-text">
+          Graphs and Statistics
+        </span>
+      </a>
+    </li>
 
-    <ul class="logout">
-      <li>
-        <a href="#">
+    <li>
+      <a href="#">
+        <i class="fa fa-table fa-2x"></i>
+        <span class="nav-text">
+          Tables
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-map-marker fa-2x"></i>
+        <span class="nav-text">
+          Maps
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-info fa-2x"></i>
+        <span class="nav-text">
+          Documentation
+        </span>
+      </a>
+    </li>
+  </ul>
 
-          <span class="nav-text">
-            copyright 2020
-          </span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <ul class="logout">
+    <li>
+      <a href="#">
+
+        <span class="nav-text">
+          copyright 2020
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
 
 <div class="container">
-    <div class="row">
-    <div class="col">
-      1 of 3
+  <div class="row">
+    <div class="col-7">
+      <div id="news-display">
+
+        <div class="card-deck">
+        </div>
+      </div>
     </div>
+  
     <div class="col-5">
-       <div  id="news-display">
-
-    <div class="card-deck">
-                    {{!-- <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                            content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                            content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to show that equal
-                            height action.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div> --}}
-    </div>
-<div>
-    </div>
-    <div class="col">
       <h1>Emergency checklist</h1>
-<ul class="Accordion">
-  <li class="Accordion-item">
-    <label for="checkboxes-menu1">Menu #1</label>
-    <input id="checkboxes-menu1" type="checkbox" name="menu" />
-    <ul class="Accordion-subElements">
-      <li class="Accordion-subElement"><a href="#">Sub-menu #1</a></li>
-      <li class="Accordion-subElement"><a href="#">Sub-menu #2</a></li>
-    </ul>
-  </li>
-  <li class="Accordion-item">
-    <label for="checkboxes-menu2">Menu #2</label>
-    <input id="checkboxes-menu2" type="checkbox" name="menu" />
-    <ul class="Accordion-subElements">
-      <li class="Accordion-subElement"><a href="#">Sub-menu #1</a></li>
-      <li class="Accordion-subElement"><a href="#">Sub-menu #2</a></li>
-    </ul>
-  </li>
-  <li class="Accordion-item">
-    <label for="checkboxes-menu3">Menu #3</label>
-    <input id="checkboxes-menu3" type="checkbox" name="menu" />
-    <ul class="Accordion-subElements">
-      <li class="Accordion-subElement"><a href="#">Sub-menu #1</a></li>
-      <li class="Accordion-subElement"><a href="#">Sub-menu #2</a></li>
-    </ul>
-  </li>
-</ul>
+      <ul class="Accordion">
+        <li class="Accordion-item">
+          <label for="checkboxes-menu1">Menu #1</label>
+          <input id="checkboxes-menu1" type="checkbox" name="menu" />
+          <ul class="Accordion-subElements">
+            <li class="Accordion-subElement"><a href="#">Sub-menu #1</a></li>
+            <li class="Accordion-subElement"><a href="#">Sub-menu #2</a></li>
+          </ul>
+        </li>
+        <li class="Accordion-item">
+          <label for="checkboxes-menu2">Menu #2</label>
+          <input id="checkboxes-menu2" type="checkbox" name="menu" />
+          <ul class="Accordion-subElements">
+            <li class="Accordion-subElement"><a href="#">Sub-menu #1</a></li>
+            <li class="Accordion-subElement"><a href="#">Sub-menu #2</a></li>
+          </ul>
+        </li>
+        <li class="Accordion-item">
+          <label for="checkboxes-menu3">Menu #3</label>
+          <input id="checkboxes-menu3" type="checkbox" name="menu" />
+          <ul class="Accordion-subElements">
+            <li class="Accordion-subElement"><a href="#">Sub-menu #1</a></li>
+            <li class="Accordion-subElement"><a href="#">Sub-menu #2</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-  </div>
-</div>
- 
-
- 
-
-
-</div>
 
   </div>
+</div>
+
+</div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <script src="/js/news.js"></script>
-
+<script src="/js/news.js"></script>

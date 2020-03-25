@@ -3,11 +3,11 @@ $(document).ready(function () {
 var input2 = ""
 var query3 =""
 var x = 0
+var test =""
 $("#submit").on("click", function(){
     // $(document).on("click", "#submit", function(){     
       event.preventDefault()
          input2 = $("#input123").val()
-
        console.log(input2)
            var query3 = "http://newsapi.org/v2/everything?q=" + input2 + "&apiKey=da7e0cce377a4cea803716a567c813f4";
 

@@ -14,6 +14,7 @@
 <body>
     <input type="text" placeholder="virus" id="text">
     <input type="text" placeholder="news" id="news">
+    <input type="text" placeholder="store" id="walmart">
 
     
     <button id="input">submit</button>
@@ -67,15 +68,17 @@
          
       })
      
-    //   var query4 = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=world&api-key=eGIw09575krjvFCtwQV4PyGl0ITskUpz";
-    //   $.ajax({
-    //       url: query4,
-    //       method: "GET"
-    //   }).then(function(response){
-    //       console.log(response)
-    //   })
+      "https://marketplace.walmartapis.com/v3/feeds?feedId={feedId}&limit=10"
 
+    })
 
+    var input3 = $("#walmart").val();
+    var query4 = "https://marketplace.walmartapis.com/v2/feeds?feedType=" + input3;
+    $.ajax({
+        url: query4,
+        method: "GET"
+    }).then(function(response){
+        console.log(response)
     })
 
 
