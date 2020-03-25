@@ -1,0 +1,34 @@
+{{>header}}
+
+<div class="container">
+  <div class="">
+    <div class="">
+      <h4>TP AUCTION HOUSE! BID YOUR GAME!</h4>
+      <div class="item-display row"></div>
+
+      <hr>
+      {{!-- <form class="form create-form">
+        <div class="form-group">
+          <p for="bid-amount">Select the item you'd like to bid on: </p>
+          <input id="item-id" type="number" step="1" placeholder="Item ID">
+          <input id="your-bid" type="number" step="0.01" placeholder="Your Bid">
+          <button type="submit" class="add-bid btn btn-primary">Bid Item!</button>
+        </div>
+      </form> --}}
+      <form class="form create-form">
+        <div class="form-group">
+          <p for="bid-amount">Add and item to the auction house: </p>
+          <input id="item-name" type="text" placeholder="Item Name">
+          <input id="item-price" type="number" step="0.01" placeholder="Item Price">
+          <button type="submit" class="add-item btn btn-primary">Add Item!</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{{!-- {{>footer}} --}}
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./js/auction.js"></script>
