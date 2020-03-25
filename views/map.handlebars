@@ -9,8 +9,8 @@
     <div class="col-md-3">
         <div class="side-nav">
             <div>
-                <input class="ml-2 mt-4" placeholder="Enter City">
-                <button lass="btn-sm btn-warning ml-2 mt-2 submit">Search</button>
+                <input class="ml-2 mt-4 country-input" placeholder="Enter Country">
+                <button class="btn-sm btn-warning ml-2 mt-2 submit" type="submit">Search</button>
             </div>
 
             {{!-- filter area --}}
@@ -36,8 +36,9 @@
         </div>
     </div>
     <div class="col-md-9 map-container">
-        {{!-- <h4 class="text-center">Map</h4> --}}
-        {{!-- <hr> --}}
+        <h5>Map</h5>
+        <p>Enter a country to change the view to that location.</p>
+        <hr>
         <div id="mapid"></div>
     </div>
 
