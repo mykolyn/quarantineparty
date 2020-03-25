@@ -8,6 +8,19 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/map/countryIs/:country", function(req, res) {
+    db.countries
+      .findAll({
+        where: {
+          name: req.params.country
+        }
+      })
+      .then(function(data) {
+        // console.log(data);
+        res.json(data);
+      });
+  });
+
   app.get("/api/map/", function(req, res) {
     db.corona
       .findAll({
@@ -24,7 +37,7 @@ module.exports = function(app) {
         group: ["province", "country", "latitude", "longitude"]
       })
       .then(function(data) {
-        console.log(data);
+        // console.log(data);
         res.json(data);
       });
   });
@@ -48,7 +61,7 @@ module.exports = function(app) {
         group: ["province", "country", "latitude", "longitude"]
       })
       .then(function(data) {
-        console.log(data);
+        // console.log(data);
         res.json(data);
       });
   });
@@ -58,6 +71,18 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+  // to_buy routing
+  // app.post("/api/posts", function(req, res) {
+  //   // Add sequelize code for creating a post using req.body,
+  //   // then return the result using res.json
+  //   db.toBuy.create({
+  //     title: req.body.title,
+  //     body:req.body.body,
+  //     category: req.body.category
+  //   }).then(function(results) {
+  //     res.json(results);
+  //   })
+  //   });
 
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {

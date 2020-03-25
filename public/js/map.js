@@ -54,6 +54,24 @@ $("#recovered").on("click", function(event) {
     });
   }
 });
+// search criteria
+var country;
+$(".submit").on("click", function(event) {
+  event.preventDefault();
+  country = $(".country-input")
+    .val()
+    .trim();
+  console.log(country);
+  $.ajax("/api/map/countryIs/" + country, {
+    type: "GET"
+  }).then(function(data) {
+    console.log(data);
+    cLat = data[0].latitude;
+    cLong = data[0].latitude;
+    console.log(cLat + " " + cLong);
+  });
+});
+// leaflet mapping
 var myMap = L.map("mapid").setView([39.82, -98.58], 4);
 
 var feature;
@@ -142,7 +160,7 @@ function dFnction() {
     .enter()
     .append("svg:circle")
     .attr("cx", function(d) {
-      console.log(d);
+      // console.log(d);
       return d.circle.coords.x;
     })
     .attr("cy", function(d) {
@@ -156,9 +174,9 @@ function dFnction() {
       } else if (lastClicked === "infected") {
         return "yellow";
       } else if (lastClicked === "recovered") {
-        return "green";
+        return "#66ff00";
       } else {
-        return "white";
+        return "yellow";
       }
     })
     .attr("r", function(d) {
