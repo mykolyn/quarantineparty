@@ -110,6 +110,20 @@ module.exports = function(app) {
         res.json(data);
       });
   });
+
+  app.get("/api/map/disaster/:disasters", function(req, res) {
+    db.emergency_list
+      .findAll({
+        where: {
+          name: req.params.disasters
+        }
+      })
+      .then(function(data) {
+        // console.log(data);
+        res.json(data);
+      });
+  });
+  
   // Create a new example
   app.post("/api/examples", function(req, res) {
     db.Example.create(req.body).then(function(dbExample) {

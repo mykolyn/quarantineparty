@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "root",
     "database": "disaster_db",
     "host": "localhost",
     "dialect": "mysql"
