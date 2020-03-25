@@ -1,7 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
-  var toBuy = sequelize.define("to_buys", {
+  var auctions = sequelize.define("tp_auctions", {
     name: {
       type: DataTypes.STRING,
+      allowNull: true
+    },
+    price: {
+      type: DataTypes.DECIMAL,
       allowNull: true
     },
     createdAt: {
@@ -13,5 +17,5 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: sequelize.literal("NOW()")
     }
   });
-  return toBuy;
+  return auctions;
 };

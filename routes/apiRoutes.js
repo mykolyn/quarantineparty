@@ -8,6 +8,12 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/auction", function(req, res) {
+    db.tp_auctions.findAll({}).then(function(data) {
+      res.json(data);
+    });
+  });
+
   app.get("/api/map/countryIs/:country", function(req, res) {
     db.countries
       .findAll({
