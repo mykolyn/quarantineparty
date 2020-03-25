@@ -44,7 +44,7 @@ $(document).ready(function () {
       console.log(result.length)
       var disasterName
       var sublist
-      for (var a = 1; a < (result.length - 2); a++) {
+      for (var a = 2; a < (result.length - 2); a++) {
         // console.log("loop running")
         // console.log("----below is results-----")
         // console.log(a + " " + result[a])
@@ -52,11 +52,14 @@ $(document).ready(function () {
         // var eList = $("<ul>");
         // $(eList).attr("class", "Accordion")
         itemDiv = $("<div>")
+        $(itemDiv).append('<a href="http://www.google.com">Google</a>')
         $(itemDiv).text(result[a])
+
 
         if (a === 0) {
           disasterName = result[1]
-
+listHead = $("<h2>")
+$(listHead).text(disasterName)
           // eLabel = $("<label>")
           // $(eLabel).attr("for", "checkboxes-menu1")
           // $(eLabel).text(disasterName)
