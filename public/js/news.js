@@ -7,19 +7,21 @@ $(document).ready(function () {
   var test = ""
 
 
-  $("#submit").on("click", function () {
-    event.preventDefault()
-
-  })
-
 
 
   $("#submit").on("click", function () {
     // $(document).on("click", "#submit", function(){     
     event.preventDefault()
-    input2 = $("#input123").val()
+    $("#news-display").empty()
+    $("#emergencylist").empty()
+
+    var disaster = $(".selectpicker").val()
+    //remove spaces
+    disaster = disaster.replace(/\s/g, '');
+    console.log(disaster)
+
     console.log(input2)
-    var query3 = "http://newsapi.org/v2/everything?q=" + input2 + "&apiKey=da7e0cce377a4cea803716a567c813f4";
+
     console.log("submit clicked")
     // console.log(query3)
 
@@ -42,7 +44,7 @@ $(document).ready(function () {
       console.log(result.length)
       var disasterName
       var sublist
-      for (var a = 1; a < (result.length-2); a++) {
+      for (var a = 1; a < (result.length - 2); a++) {
         // console.log("loop running")
         // console.log("----below is results-----")
         // console.log(a + " " + result[a])
@@ -51,13 +53,13 @@ $(document).ready(function () {
         // $(eList).attr("class", "Accordion")
         itemDiv = $("<div>")
         $(itemDiv).text(result[a])
-        
+
         if (a === 0) {
           disasterName = result[1]
 
-          eLabel = $("<label>")
-          $(eLabel).attr("for", "checkboxes-menu1")
-          $(eLabel).text(disasterName)
+          // eLabel = $("<label>")
+          // $(eLabel).attr("for", "checkboxes-menu1")
+          // $(eLabel).text(disasterName)
 
           //  input = $("<input>")
           //   $(input).attr("id", "checkboxes-menu1")
@@ -75,7 +77,7 @@ $(document).ready(function () {
 
         console.log("Asdasdasd" + subList)
 
-      $("#emergencylist").append(itemDiv)
+        $("#emergencylist").append(itemDiv)
 
 
       }
@@ -88,12 +90,22 @@ $(document).ready(function () {
     console.log("dname is" + disasterName)
 
     // news articles
+
+    if (disaster === "ViralOutbreak") {
+      console.log("running conversion")
+      disaster = "pandemic"
+      return disasterName
+    }
+    console.log(disaster)
+    var query3 = "http://newsapi.org/v2/everything?q=" + disaster + "&apiKey=da7e0cce377a4cea803716a567c813f4";
+    console.log(query3)
+
     $.ajax({
       url: query3,
       method: "GET"
     }).then(function (response) {
       console.log("runnin .then")
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < 4; i++) {
 
         if (i % 1 == 0) {
 

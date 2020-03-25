@@ -22,12 +22,21 @@
         <span class="nav-text">
           {{!-- <form action="/action_page.php"> --}}
           <form id="form1">
+            <br><br>
             <label for="disaster"></label>
-            <input type="text" id="input123" name="fname" placeholder="miracle"><br><br>
             <select class="selectpicker">
               <option>Flood</option>
-              <option>water</option>
+              <option>Tsunami</option>
               <option>Earthquake</option>
+              <option>Volcano</option>
+              <option>Blizzard</option>
+              <option>Wild Fire</option>
+              <option>Viral Outbreak</option>
+              <option>Hurricane</option>
+
+
+
+
             </select>
 
             <label for="lname"></label>
@@ -95,26 +104,27 @@
         </div>
       </div>
     </div>
-  
-    <div id="emergencylist" class="col-5">
+
+    <div class="col-5">
       <h1>Emergency checklist</h1>
+      <div id="emergencylist"></div>
       {{!-- <ul class="Accordion">
         <i class="Accordion-item">
           <label for="checkboxes-menu1">Menu #1</label>
           <input id="checkboxes-menu1" type="checkbox" name="menu" ></input>
           <ul class="Accordion-subElements"> --}}
-            {{!-- <li class="Accordion-subElement"><a href="#">Sub-menu #1</a></li>
+      {{!-- <li class="Accordion-subElement"><a href="#">Sub-menu #1</a></li>
             <li class="Accordion-subElement"><a href="#">Sub-menu #2</a></li> --}}
-          </ul>
-        </li>
+      {{!-- </ul>
+        </li> --}}
 
 
 
 
 
 
+    </div>
   </div>
-</div>
 
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
