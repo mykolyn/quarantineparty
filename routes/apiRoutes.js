@@ -27,7 +27,6 @@ module.exports = function(app) {
     db.tp_auctions
       .update(
         {
-          name: req.body.name,
           price: req.body.price
         },
         {
