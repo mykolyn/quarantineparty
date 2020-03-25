@@ -1,45 +1,13 @@
-{{!-- {{>header}} --}}
-<html>
 
-<head>
 
-</head>
-<div>{{>header}}</div>
 
-<body>
-  <div class="area">
+{{>header}}
 
-  </div>
+
   <nav class="main-menu">
     <ul>
-   
-   
-             <li>
-        <a href="#">
-          <i class="fa fa-bar-chart-o fa-2x"></i>
-          <span class="nav-text">
-            Graphs and Statistics
-          </span>
-        </a>
-      </li>
-   
-         
 
-      <li class="has-subnav">
-        <a href="#">
-          <i class="fa fa-list fa-2x"></i>
-          <span class="nav-text">
-            <form action="/action_page.php">
-              <label for="disaster"></label>
-              <input type="text" id="fname" name="fname" placeholder="Disaster"><br><br>
-              <label for="lname"></label>
-              <input type="text" id="lname" name="lname" placeholder="City"><br><br>
-              <input type="submit" value="Submit">
-            </form>
-          </span>
-        </a>
-      </li>
-    
+
       <li>
         <a href="#">
           <i class="fa fa-bar-chart-o fa-2x"></i>
@@ -48,7 +16,34 @@
           </span>
         </a>
       </li>
-   
+
+
+
+      <li class="has-subnav">
+        <a href="#">
+          <i class="fa fa-list fa-2x"></i>
+          <span class="nav-text">
+            {{!-- <form action="/action_page.php"> --}}
+            <form id="form1">
+              <label for="disaster"></label>
+              <input type="text" id="input123" name="fname" placeholder="miracle"><br><br>
+              <label for="lname"></label>
+              <input type="text" id="lname" name="lname" placeholder="City"><br><br>
+              <input type="submit" id="submit" value="Submit">
+            </form>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa fa-bar-chart-o fa-2x"></i>
+          <span class="nav-text">
+            Graphs and Statistics
+          </span>
+        </a>
+      </li>
+
       <li>
         <a href="#">
           <i class="fa fa-table fa-2x"></i>
@@ -78,7 +73,7 @@
     <ul class="logout">
       <li>
         <a href="#">
-          
+
           <span class="nav-text">
             copyright 2020
           </span>
@@ -87,81 +82,89 @@
     </ul>
   </nav>
 
-  <div class="container">
 
+<div class="container">
     <div class="row">
-
-      <div class="card-columns">
-        <div class="card">
-          <img class="card-img-top img-fluid" src="https://dummyimage.com/300" alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">Card title that wraps to a new line</h4>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-          </div>
-        </div>
-        <div class="card p-3">
-          <blockquote class="card-block card-blockquote">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer>
-              <small class="text-muted">
-                Someone famous in <cite title="Source Title">Source Title</cite>
-              </small>
-            </footer>
-          </blockquote>
-        </div>
-        <div class="card">
-          <img class="card-img-top img-fluid" src="https://dummyimage.com/300" alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card card-inverse card-primary p-3 text-center">
-          <blockquote class="card-blockquote">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-            <footer>
-              <small>
-                Someone famous in <cite title="Source Title">Source Title</cite>
-              </small>
-            </footer>
-          </blockquote>
-        </div>
-        <div class="card text-center">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img img-fluid" src="https://dummyimage.com/300" alt="Card image">
-        </div>
-        <div class="card p-3 text-right">
-          <blockquote class="card-blockquote">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer>
-              <small class="text-muted">
-                Someone famous in <cite title="Source Title">Source Title</cite>
-              </small>
-            </footer>
-          </blockquote>
-        </div>
-        <div class="card">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This card has even longer content than the first to show that equal height action.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
-
+    <div class="col">
+      1 of 3
     </div>
+    <div class="col-5">
+       <div  id="news-display">
 
+    <div class="card-deck">
+                    {{!-- <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height action.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div> --}}
+    </div>
+<div>
+    </div>
+    <div class="col">
+      <h1>Emergency checklist</h1>
+<ul class="Accordion">
+  <li class="Accordion-item">
+    <label for="checkboxes-menu1">Menu #1</label>
+    <input id="checkboxes-menu1" type="checkbox" name="menu" />
+    <ul class="Accordion-subElements">
+      <li class="Accordion-subElement"><a href="#">Sub-menu #1</a></li>
+      <li class="Accordion-subElement"><a href="#">Sub-menu #2</a></li>
+    </ul>
+  </li>
+  <li class="Accordion-item">
+    <label for="checkboxes-menu2">Menu #2</label>
+    <input id="checkboxes-menu2" type="checkbox" name="menu" />
+    <ul class="Accordion-subElements">
+      <li class="Accordion-subElement"><a href="#">Sub-menu #1</a></li>
+      <li class="Accordion-subElement"><a href="#">Sub-menu #2</a></li>
+    </ul>
+  </li>
+  <li class="Accordion-item">
+    <label for="checkboxes-menu3">Menu #3</label>
+    <input id="checkboxes-menu3" type="checkbox" name="menu" />
+    <ul class="Accordion-subElements">
+      <li class="Accordion-subElement"><a href="#">Sub-menu #1</a></li>
+      <li class="Accordion-subElement"><a href="#">Sub-menu #2</a></li>
+    </ul>
+  </li>
+</ul>
+    </div>
+  </div>
+</div>
+ 
+
+ 
+
+
+</div>
 
   </div>
-</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-</html>
+    <script src="/js/news.js"></script>
+
