@@ -21,6 +21,11 @@ module.exports = function(app) {
       });
     });
   });
+ //news page
+  app.get("/news", function(req, res) {
+    res.render("news");
+  });
+
   // tp construction
   app.get("/auction", function(req, res) {
     res.render("example");

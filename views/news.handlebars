@@ -1,0 +1,132 @@
+{{>header}}
+
+
+<nav class="main-menu">
+  <ul>
+
+
+    <li>
+      <a href="#">
+        <i class="fa fa-bar-chart-o fa-2x"></i>
+        <span class="nav-text">
+          Graphs and Statistics
+        </span>
+      </a>
+    </li>
+
+
+
+    <li class="has-subnav">
+      <a href="#">
+        <i class="fa fa-list fa-2x"></i>
+        <span class="nav-text">
+          {{!-- <form action="/action_page.php"> --}}
+          <form id="form1">
+            <br><br>
+            <label for="disaster"></label>
+            <select class="selectpicker">
+              <option>Flood</option>
+              <option>Tsunami</option>
+              <option>Earthquake</option>
+              <option>Volcano</option>
+              <option>Blizzard</option>
+              <option>Wild Fire</option>
+              <option>Viral Outbreak</option>
+              <option>Hurricane</option>
+
+
+
+
+            </select>
+
+            <label for="lname"></label>
+            <input type="text" id="lname" name="lname" placeholder="City"><br><br>
+            <input type="submit" id="submit" value="Submit">
+          </form>
+        </span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        <i class="fa fa-bar-chart-o fa-2x"></i>
+        <span class="nav-text">
+          Graphs and Statistics
+        </span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        <i class="fa fa-table fa-2x"></i>
+        <span class="nav-text">
+          Tables
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-map-marker fa-2x"></i>
+        <span class="nav-text">
+          Maps
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-info fa-2x"></i>
+        <span class="nav-text">
+          Documentation
+        </span>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="logout">
+    <li>
+      <a href="#">
+
+        <span class="nav-text">
+          copyright 2020
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <div id="news-display">
+
+        <div class="card-deck">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5">
+      <h1>Emergency checklist</h1>
+      <div id="emergencylist"></div>
+      {{!-- <ul class="Accordion">
+        <i class="Accordion-item">
+          <label for="checkboxes-menu1">Menu #1</label>
+          <input id="checkboxes-menu1" type="checkbox" name="menu" ></input>
+          <ul class="Accordion-subElements"> --}}
+      {{!-- <li class="Accordion-subElement"><a href="#">Sub-menu #1</a></li>
+            <li class="Accordion-subElement"><a href="#">Sub-menu #2</a></li> --}}
+      {{!-- </ul>
+        </li> --}}
+
+
+
+
+
+
+    </div>
+  </div>
+
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="/js/news.js"></script>
