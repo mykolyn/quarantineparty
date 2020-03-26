@@ -1,9 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-<<<<<<< HEAD:models/auctions.js
   var auctions = sequelize.define("tp_auctions", {
-=======
-  var toBuy = sequelize.define("to_buy", {
->>>>>>> master:models/tobuy.js
+  // var toBuy = sequelize.define("to_buy", {
     name: {
       type: DataTypes.STRING,
       allowNull: true

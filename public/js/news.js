@@ -2,15 +2,12 @@
 console.log("new.js conencted")
 $(document).ready(function () {
   var input2 = ""
-  var query3 = ""
   var x = 0
-  var test = ""
 
 
 
 
   $("#submit").on("click", function () {
-    // $(document).on("click", "#submit", function(){     
     event.preventDefault()
     $("#news-display").empty()
     $("#emergencylist").empty()
@@ -125,11 +122,13 @@ $(document).ready(function () {
 
         var newsDiv = $("<div>");
         $(newsDiv).attr("class", "card")
+       
+
 
         //card-body element
         var cardBody = $("<div>");
         $(cardBody).attr("class", "card-body")
-
+        $(newsDiv).attr("id", "newscard")
         //create title
         var title = response.articles[i].title
         var cardHead = $("<h5>")
