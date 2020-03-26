@@ -317,3 +317,6 @@ li {
 .pfp {
   border-radius: 50%;
 }
+.navbar .fa {
+  display: inline
+}
