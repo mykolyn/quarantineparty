@@ -1,9 +1,7 @@
-html, body {margin: 0; height: 100%; overflow: hidden}
-
 
 /* styling for map page */
 .side-nav {
-  /* width: 20%;*/
+  width: 20%;
   height: 100vh;
   background-color: #700;
   color: #ffffff;
