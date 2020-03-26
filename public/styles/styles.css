@@ -1,3 +1,6 @@
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+
 /* styling for map page */
 .side-nav {
   /* width: 20%;*/
@@ -12,9 +15,12 @@
   margin-left: 260px;
   margin-top: 40px;
   width:50%;
+  margin: 10px;
 }
 
-
+#newscards {
+  background-color: red
+}
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
