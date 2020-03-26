@@ -2,15 +2,12 @@
 console.log("new.js conencted")
 $(document).ready(function () {
   var input2 = ""
-  var query3 = ""
   var x = 0
-  var test = ""
 
 
 
 
   $("#submit").on("click", function () {
-    // $(document).on("click", "#submit", function(){     
     event.preventDefault()
     $("#news-display").empty()
     $("#emergencylist").empty()
