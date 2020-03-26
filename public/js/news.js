@@ -1,5 +1,8 @@
 
 console.log("new.js conencted")
+
+//hi sanjay :)
+
 $(document).ready(function () {
   var input2 = ""
   var x = 0
